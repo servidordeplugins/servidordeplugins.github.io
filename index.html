@@ -1,39 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Servidor Minecraft</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servidor Minecraft</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+<div class="container">
+  <h1>Servidor Minecraft (1.21.1)</h1>
 
-<div class="card">
-<h1>Servidor Minecraft 1.21.1</h1>
-<p class="subtitle">Hosteado en Norteamérica 24/7 · Comunidad Chile (Biobío)</p>
+  <div class="subtitle">
+    Hosteado en Norteamérica <strong>24/7</strong> · Comunidad Chile (Región del Biobío)
+  </div>
 
+  <!-- ESTADO DEL SERVIDOR -->
+  <div class="status-box">
+    <span class="dot" id="statusDot"></span>
+    <span id="statusText">Cargando estado...</span>
+  </div>
 
-<div id="status">Cargando estado...</div>
+  <!-- BOTONES -->
+  <div class="buttons">
+    <button class="btn" onclick="copyText('plugins.my.pebble.host')">
+      <strong>Copiar IP</strong>
+    </button>
+    <button class="btn" onclick="copyText('8152')">
+      <strong>Copiar Puerto</strong>
+    </button>
+  </div>
 
+  <!-- CARACTERÍSTICAS -->
+  <div class="features">
+    <div class="feature">Armamento con habilidades únicas</div>
+    <div class="feature">Mini-bosses aleatorios</div>
+    <div class="feature">Java + Bedrock (Puerto 8152)</div>
+  </div>
 
-<div class="info">
-<div class="box">⚔️ Armamento con habilidades únicas</div>
-<div class="box">👹 Mini‑bosses aleatorios</div>
-<div class="box">🌍 Java + Bedrock (Puerto 8152)</div>
+  <!-- GALERÍA -->
+  <div class="gallery">
+    <h2>Galería</h2>
+
+    <div class="preview">
+      <img id="preview" src="img/img1.jpg" alt="Vista del servidor">
+    </div>
+
+    <div class="thumbs">
+      <img src="img/img1.jpg" alt="Vista 1" onclick="setPreview(this.src)">
+      <img src="img/img2.jpg" alt="Vista 2" onclick="setPreview(this.src)">
+      <img src="img/img3.jpg" alt="Vista 3" onclick="setPreview(this.src)">
+    </div>
+  </div>
 </div>
 
+<!-- NOTIFICACIÓN -->
+<div class="toast" id="toast">Copiado</div>
 
-<div class="buttons">
-<button onclick="copyText('plugins.my.pebble.host')">Copiar IP</button>
-<button onclick="copyText('8152')">Copiar Puerto (Bedrock)</button>
-</div>
-</div>
-
-
-<div id="toast">Copiado</div>
-
-
+<!-- Script -->
 <script src="script.js"></script>
+
 </body>
 </html>
