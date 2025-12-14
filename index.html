@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servidor Minecraft</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Servidor Minecraft</h1>
+        <p>Servidor hosteado en Norte América, jugadores de la Región del Biobío (Chile)</p>
+    </header>
+
+    <!-- Estado del servidor -->
+    <section class="section">
+        <div class="label">Estado del servidor</div>
+        <div id="server-status" class="status">⏳ Consultando estado...</div>
+    </section>
+
+    <!-- Botones de copiar -->
+    <section class="section">
+        <div class="label">Conéctate al servidor</div>
+        <button onclick="copyText('plugins.my.pebble.host')">Copiar IP</button>
+        <button onclick="copyText('8152')">Copiar puerto</button>
+    </section>
+
+    <!-- Notificación de copiado -->
+    <div id="toast">Copiado.</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
