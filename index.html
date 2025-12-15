@@ -2,55 +2,57 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Servidor Minecraft</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
 
-  <div class="container">
+  <main class="container">
+
     <h1>Servidor Minecraft (1.21.1)</h1>
-    <div class="subtitle">
+    <p class="subtitle">
       Hosteado en Norteamérica 24/7 · Comunidad Chile (Región del Biobío)
+    </p>
+
+    <!-- ESTADO -->
+    <div id="server-status" class="status">
+      <span id="status-dot" class="dot offline"></span>
+      <span id="status-text">Cargando estado del servidor...</span>
     </div>
 
-    <div class="status-box">
-      <span class="dot" id="statusDot"></span>
-      <span id="statusText">Cargando estado...</span>
-    </div>
-
+    <!-- BOTONES -->
     <div class="buttons">
-      <button class="btn" onclick="copyText('plugins.my.pebble.host')">
-        Copiar IP
-      </button>
-      <button class="btn" onclick="copyText('8152')">
-        Copiar Puerto
-      </button>
+      <button onclick="copyIP()">Copiar IP</button>
+      <button onclick="copyPort()">Copiar Puerto</button>
     </div>
 
+    <!-- FEATURES -->
     <div class="features">
       <div class="feature">Armamento con habilidades únicas</div>
       <div class="feature">Mini-bosses aleatorios</div>
       <div class="feature">Java + Bedrock (Puerto 8152)</div>
     </div>
 
-    <div class="gallery">
+    <!-- GALERÍA -->
+    <section class="gallery">
       <h2>Galería</h2>
 
-      <div class="preview">
-        <img id="preview" src="img/img1.png" alt="Vista del servidor">
+      <img id="preview" src="img/vista1.png" alt="Vista del servidor">
+
+      <div class="thumbnails">
+        <img src="img/vista1.png" onclick="changeImage(this.src)">
+        <img src="img/vista2.png" onclick="changeImage(this.src)">
+        <img src="img/vista3.png" onclick="changeImage(this.src)">
       </div>
+    </section>
 
-      <div class="thumbs">
-        <img src="img/img1.png" onclick="setPreview(this.src)">
-        <img src="img/img2.png" onclick="setPreview(this.src)">
-        <img src="img/img3.png" onclick="setPreview(this.src)">
-      </div>
-    </div>
-  </div>
+    <!-- NOTIFICACIÓN -->
+    <div id="toast">Copiado</div>
 
-  <div class="toast" id="toast">Copiado</div>
+  </main>
 
-  <script src="script.js"></script>
 </body>
 </html>
