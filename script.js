@@ -1,36 +1,33 @@
-const SERVER_IP = "plugins.my.pebble.host";
+function copyText(text) {
+  navigator.clipboard.writeText(text);
+  showToast();
+}
+
+function showToast() {
+  const toast = document.getElementById("toast");
+  toast.classList.add("show");
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2000);
+}
 
 function setPreview(src) {
   document.getElementById("preview").src = src;
 }
 
-function copyText(text) {
-  navigator.clipboard.writeText(text);
-  const toast = document.getElementById("toast");
-  toast.classList.add("show");
-  setTimeout(() => toast.classList.remove("show"), 1800);
+/* Estado del servidor (simulado) */
+const online = true;
+const players = 5;
+const maxPlayers = 20;
+
+const statusText = document.getElementById("statusText");
+const statusDot = document.getElementById("statusDot");
+
+if (online) {
+  statusText.textContent = `Online — ${players}/${maxPlayers} jugadores`;
+  statusDot.style.background = "#22c55e";
+  statusDot.style.boxShadow = "0 0 8px rgba(34,197,94,.8)";
+} else {
+  statusText.textContent = "Offline";
+  statusDot.style.background = "#ef4444";
 }
-
-async function updateServerStatus() {
-  try {
-    const res = await fetch(`https://api.mcsrvstat.us/2/${SERVER_IP}`);
-    const data = await res.json();
-
-    const dot = document.getElementById("statusDot");
-    const text = document.getElementById("statusText");
-
-    if (data.online) {
-      dot.className = "dot online";
-      text.textContent = `Online — ${data.players.online}/${data.players.max} jugadores`;
-    } else {
-      dot.className = "dot offline";
-      text.textContent = "Offline";
-    }
-  } catch {
-    document.getElementById("statusDot").className = "dot offline";
-    document.getElementById("statusText").textContent = "Offline";
-  }
-}
-
-updateServerStatus();
-setInterval(updateServerStatus, 30000);
