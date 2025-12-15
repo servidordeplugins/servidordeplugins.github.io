@@ -4,64 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Servidor Minecraft</title>
-
-  <!-- Estilos -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="container">
-  <h1>Servidor Minecraft (1.21.1)</h1>
-
-  <div class="subtitle">
-    Hosteado en Norteamérica <strong>24/7</strong> · Comunidad Chile (Región del Biobío)
-  </div>
-
-  <!-- ESTADO DEL SERVIDOR -->
-  <div class="status-box">
-    <span class="dot" id="statusDot"></span>
-    <span id="statusText">Cargando estado...</span>
-  </div>
-
-  <!-- BOTONES -->
-  <div class="buttons">
-    <button class="btn" onclick="copyText('plugins.my.pebble.host')">
-      <strong>Copiar IP</strong>
-    </button>
-    <button class="btn" onclick="copyText('8152')">
-      <strong>Copiar Puerto</strong>
-    </button>
-  </div>
-
-  <!-- CARACTERÍSTICAS -->
-  <div class="features">
-    <div class="feature">Armamento con habilidades únicas</div>
-    <div class="feature">Mini-bosses aleatorios</div>
-    <div class="feature">Java + Bedrock (Puerto 8152)</div>
-  </div>
-
-  <!-- GALERÍA -->
-  <div class="gallery">
-    <h2>Galería</h2>
-
-    <div class="preview">
-      <img id="preview" src="img/img1.png" alt="Vista del servidor">
+  <div class="container">
+    <h1>Servidor Minecraft (1.21.1)</h1>
+    <div class="subtitle">
+      Hosteado en Norteamérica 24/7 · Comunidad Chile (Región del Biobío)
     </div>
 
-    <div class="thumbs">
-      <img src="img/img1.png" alt="Vista 1" onclick="setPreview(this.src)">
-      <img src="img/img2.png" alt="Vista 2" onclick="setPreview(this.src)">
-      <img src="img/img3.png" alt="Vista 3" onclick="setPreview(this.src)">
+    <div class="status-box">
+      <span class="dot" id="statusDot"></span>
+      <span id="statusText">Cargando estado...</span>
+    </div>
+
+    <div class="buttons">
+      <button class="btn" onclick="copyText('plugins.my.pebble.host')">
+        Copiar IP
+      </button>
+      <button class="btn" onclick="copyText('8152')">
+        Copiar Puerto
+      </button>
+    </div>
+
+    <div class="features">
+      <div class="feature">Armamento con habilidades únicas</div>
+      <div class="feature">Mini-bosses aleatorios</div>
+      <div class="feature">Java + Bedrock (Puerto 8152)</div>
+    </div>
+
+    <div class="gallery">
+      <h2>Galería</h2>
+
+      <div class="preview">
+        <img id="preview" src="img/img1.png" alt="Vista del servidor">
+      </div>
+
+      <div class="thumbs">
+        <img src="img/img1.png" onclick="setPreview(this.src)">
+        <img src="img/img2.png" onclick="setPreview(this.src)">
+        <img src="img/img3.png" onclick="setPreview(this.src)">
+      </div>
     </div>
   </div>
-</div>
 
-<!-- NOTIFICACIÓN -->
-<div class="toast" id="toast">Copiado</div>
+  <div class="toast" id="toast">Copiado</div>
 
-<!-- Script -->
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
